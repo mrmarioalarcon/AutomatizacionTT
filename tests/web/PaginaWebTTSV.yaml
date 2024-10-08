@@ -1,0 +1,27 @@
+description: BUSQUEDA CON VARIOS REGISTROS
+actors:
+  - actor: ACTOR1
+    segments:
+      - segment: 1
+        actions:
+          - description: Navegar a la pagina inicial
+            action: org.getopentest.selenium.NavigateTo
+            args:
+              url: $data("PaginaWeb/data").url
+
+          - description: Tomar screenshot
+            action: org.getopentest.selenium.TakeScreenshot
+
+          - description: Ingreso de registros de búsqueda
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: {xpath: "//*[@id='mat-input-0']"}
+              text: Ccampos
+              sendEnter: true
+            
+          - description: Ingreso de registros de búsqueda
+            action: org.getopentest.selenium.SendKeys
+            args:
+              locator: {xpath: "//*[@id='mat-input-1']"}
+              text: Ccampos
+              sendEnter: true
